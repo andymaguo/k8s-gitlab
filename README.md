@@ -1,3 +1,4 @@
+Thanks to https://github.com/lwolf/kubernetes-gitlab, this is a reference. I update some content while i practice it.
 # kubernetes-gitlab
 Manifests to deploy GitLab on Kubernetes 
 
