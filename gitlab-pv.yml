@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitlab-pv
+  namespace: gitlab
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 200Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.202.59.231
+    path: "/nfs/gitlab/gitlab"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitlab-redis-pv
+  namespace: gitlab
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.202.59.231
+    path: "/nfs/gitlab/redis"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitlab-postgresql-pv
+  namespace: gitlab
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.202.59.231
+    path: "/nfs/gitlab/postgresql"
+

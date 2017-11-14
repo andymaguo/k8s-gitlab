@@ -17,9 +17,9 @@ spec:
         imagePullPolicy: Always
         env:
         - name: TZ
-          value: Europe/Stockholm
+          value: Asiz/Shanghai
         - name: GITLAB_TIMEZONE
-          value: Stockholm
+          value: Beijing
         - name: DEBUG
           value: "false"
 
@@ -36,11 +36,11 @@ spec:
           value: root@example.com
 
         - name: GITLAB_HOST
-          value: git.example.com
+          value: git.dataops.accenture.com
         - name: GITLAB_PORT
           value: "80"
         - name: GITLAB_SSH_HOST
-          value: "ssh-git.example.com"
+          value: "ssh-git.dataops.accenture.com"
         - name: GITLAB_SSH_PORT
           value: "1022"
 
@@ -125,4 +125,5 @@ spec:
           timeoutSeconds: 1
       volumes:
       - name: data
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: gitlab-pv-claim
