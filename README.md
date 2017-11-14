@@ -31,6 +31,10 @@ Installation process described in [blog](http://blog.lwolf.org/post/how-to-easil
 # create gitlab namespace
 > $ kubectl create -f gitlab-ns.yml
 
+# deploy PersistentVolumes and claim
+> $ kubectl create -f redis-pv.yml
+> $ kubectl create -f redis-pv-claim.yml
+
 # deploy redis
 > $ kubectl create -f gitlab/redis-svc.yml
 > $ kubectl create -f gitlab/redis-deployment.yml
